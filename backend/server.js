@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import { configDotenv } from "dotenv";
+import apiRoutes from "./routes/apiRoutes.js";
 
 configDotenv();
 
@@ -16,8 +17,10 @@ mongoose
   .then(() => console.log("✅ Successfully connected to MongoDB Vault!"))
   .catch((err) => console.error("❌ Database connection error:", err));
 
+app.use("/api", apiRoutes);
+
 app.get("/test", (req, res) => {
-  res.json({message: "✅GhostRoute server is successfully running..."});
+  res.json({ message: "✅GhostRoute server is successfully running..." });
 });
 
 app.listen(port, () => {
