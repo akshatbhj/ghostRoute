@@ -42,4 +42,5 @@ const EndpointSchema = new mongoose.Schema(
 // (e.g., You can have GET /users and POST /users, but not two GET /users)
 EndpointSchema.index({ endpointPath: 1, method: 1 }, { unique: true });
 
-export default mongoose.model("Endpoint", EndpointSchema);
+const endpoint = mongoose.model("Endpoint", EndpointSchema);
+export default endpoint;
