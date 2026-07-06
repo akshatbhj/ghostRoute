@@ -3,6 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import { configDotenv } from "dotenv";
 import apiRoutes from "./routes/apiRoutes.js";
+import mockRoutes from "./routes/mockRoutes.js";
 
 configDotenv();
 
@@ -18,6 +19,7 @@ mongoose
   .catch((err) => console.error("❌ Database connection error:", err));
 
 app.use("/api", apiRoutes);
+app.use("/mock", mockRoutes);
 
 app.get("/test", (req, res) => {
   res.json({ message: "✅GhostRoute server is successfully running..." });
