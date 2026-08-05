@@ -1,5 +1,5 @@
 export default function Button({ children, onClick, variant = "primary" }) {
-  const baseStyles = "px-4 py-2 text-lg font-medium rounded-md transition-all shadow-sm active:scale-95";
+  const baseStyles = "px-6 py-2 text-lg font-medium rounded-md transition-all shadow-sm active:scale-95";
   
   const variants = {
     primary: "bg-indigo-600 hover:bg-indigo-500 text-white border border-indigo-500 cursor-pointer",
