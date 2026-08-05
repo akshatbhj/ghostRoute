@@ -9,7 +9,7 @@ export default function DashboardLayout({ children }) {
             GhostRoute
           </h1>
         </div>
-        <nav className="flex-1 p-4 space-y-2 text-sm">
+        <nav className="flex-1 p-4 space-y-2 text-lg">
           <div className="px-3 py-2 bg-indigo-500/10 text-indigo-400 rounded-md border border-indigo-500/20 cursor-pointer">
             Schema Builder
           </div>
@@ -23,7 +23,7 @@ export default function DashboardLayout({ children }) {
       <main className="flex-1 flex flex-col h-screen overflow-hidden">
         {/* TOP HEADER */}
         <header className="h-16 flex items-center px-8 border-b border-slate-800 bg-slate-950/50 backdrop-blur-sm">
-          <h2 className="text-sm font-medium text-slate-400">
+          <h2 className="text-lg font-medium text-slate-400">
             Workspace / <span className="text-slate-100">New Endpoint</span>
           </h2>
         </header>

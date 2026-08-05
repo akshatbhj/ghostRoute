@@ -2,7 +2,7 @@ export default function Input({ label, placeholder, type = "text", value, onChan
   return (
     <div className="flex flex-col space-y-1.5">
       {label && (
-        <label className="text-xs font-medium text-slate-400 uppercase tracking-wider">
+        <label className="text-sm font-medium text-slate-400 uppercase tracking-wider">
           {label}
         </label>
       )}
