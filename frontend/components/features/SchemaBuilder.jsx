@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Input from "../ui/Input";
 import Select from "../ui/Select";
 import Button from "../ui/Button";
@@ -6,8 +5,7 @@ import Button from "../ui/Button";
 // These must exactly match the keys in backend typeGenerator!
 const FAKER_TYPES = ["ID", "Full Name", "Email", "String", "Number", "Boolean"];
 
-export default function SchemaBuilder() {
-  const [fields, setFields] = useState([{ fieldName: "", fieldType: "" }]);
+export default function SchemaBuilder({fields, setFields}) {
 
   const addField = () => {
     setFields([...fields, { fieldName: "", fieldType: "" }]);
