@@ -7,6 +7,7 @@ import Terminal from "../components/ui/Terminal.jsx";
 import SchemaBuilder from "../components/features/SchemaBuilder.jsx";
 
 export default function App() {
+  const API_BASE = import.meta.env.VITE_API_URL || "";
   // Configuration States
   const [endpointPath, setEndpointPath] = useState("");
   const [fields, setFields] = useState([{ fieldName: "", fieldType: "" }]);
@@ -32,7 +33,7 @@ export default function App() {
     setMockData(null);
 
     try {
-      const response = await fetch('/api/create-endpoint', {
+      const response = await fetch(`${API_BASE}/api/create-endpoint`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -57,7 +58,7 @@ export default function App() {
   const handleTestEndpoint = async () => {
     setIsFetchingData(true);
     try {
-      const response = await fetch(`/mock/${endpointPath}`);
+      const response = await fetch(`${API_BASE}/mock/${endpointPath}`);
       if (response.ok) {
         const data = await response.json();
         setMockData(data);
